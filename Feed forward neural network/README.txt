@@ -511,7 +511,7 @@ The report contains:
 - supporting tables for classification
 - supporting tables for regression
 - supporting combined-overall tables
-- final answers for the three Part 5 questions
+- final answers for the three summary questions
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
