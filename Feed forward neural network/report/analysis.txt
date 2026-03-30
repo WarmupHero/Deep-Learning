@@ -1,0 +1,65 @@
+ANALYSIS
+================
+
+Method
+------
+For each run, convergence epoch is the first epoch after which all remaining training-loss values stay within a small tolerance of the final training loss.
+
+For overall loss comparison across classification and regression, combined results use normalized best validation loss within each problem separately.
+
+Supporting Data — Classification
+--------------------------------
+Loss : BCE
+
+Optimizer Summary — Classification
+----------------------------------
+Group          Runs    Avg Conv Epoch    Avg Best Val Loss   
+sgd            8       61.88             0.351065            
+momentum       8       60.00             0.351172            
+adabelief      8       61.75             0.011485            
+
+Architecture Summary — Classification
+-------------------------------------
+Group          Runs    Avg Conv Epoch    Avg Best Val Loss   
+A1             12      73.00             0.238500            
+A2             12      49.42             0.237315            
+
+Supporting Data — Regression
+----------------------------
+Loss: MSE
+
+Optimizer Summary — Regression
+------------------------------
+Group          Runs    Avg Conv Epoch    Avg Best Val Loss   
+sgd            8       63.25             167.387994          
+momentum       8       71.25             166.861952          
+adabelief      8       80.50             86.049709           
+
+Architecture Summary — Regression
+---------------------------------
+Group          Runs    Avg Conv Epoch    Avg Best Val Loss   
+A1             12      92.00             7.606070            
+A2             12      51.33             272.593700          
+
+Supporting Data — Combined Overall
+---------------------------------
+Loss values below are normalized within each problem before averaging.
+
+Optimizer Summary — Combined Overall
+------------------------------------
+Group          Runs    Avg Conv Epoch    Avg Norm Best Val Loss  
+sgd            16      62.56             0.381079                
+momentum       16      65.62             0.380749                
+adabelief      16      71.12             0.071988                
+
+Architecture Summary — Combined Overall
+---------------------------------------
+Group          Runs    Avg Conv Epoch    Avg Norm Best Val Loss  
+A1             24      82.50             0.175741                
+A2             24      50.38             0.380135                
+
+Answers
+-------
+1. Fastest optimizer on average over all experiments: sgd
+2. Best optimizer by average loss-function value over all experiments using average normalized best validation loss: adabelief 
+3. How network depth affects optimization: Overall, A2 (3 hidden layers) converges faster on average, while A1 (1 hidden layer) achieves the better average normalized loss. 
